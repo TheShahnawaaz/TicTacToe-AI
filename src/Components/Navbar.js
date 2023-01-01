@@ -1,7 +1,5 @@
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -20,7 +18,6 @@ import Button from "@mui/material/Button";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import MuiToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { pink } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 
 const ToggleButtonE = styled(MuiToggleButton)({
@@ -74,7 +71,6 @@ function DrawerAppBar(props) {
   const navigate = useNavigate();
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  useEffect(() => {}, [mobileOpen]);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);

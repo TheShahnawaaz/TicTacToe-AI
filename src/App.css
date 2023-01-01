@@ -15,9 +15,8 @@ body {
   padding: 5px !important;
   transition: all 0.3s ease-in-out !important;
 }
-.ubun{
+.ubun {
   font-family: "Ubuntu", sans-serif !important;
-  
 }
 .btn > h1 {
   font-size: 500%;
@@ -46,10 +45,16 @@ body {
   .btn > h1 {
     font-size: 170%;
   }
+  .boox {
+    display: flex;
+    align-items: center;
+    height: 85vh;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .btn:hover {
-  constent: "R";
   scale: 1.05 !important;
   cursor: inherit !important;
 }

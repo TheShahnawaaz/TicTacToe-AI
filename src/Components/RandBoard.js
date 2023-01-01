@@ -25,9 +25,9 @@ const RandBoard = () => {
   }
 
   class RandomCP extends Player {
-    constructor(letter) {
-      super(letter);
-    }
+    // constructor(letter) {
+    //   super(letter);
+    // }
 
     getMove(game) {
       const square =
@@ -39,9 +39,9 @@ const RandBoard = () => {
   }
 
   class HumanP extends Player {
-    constructor(letter) {
-      super(letter);
-    }
+    // constructor(letter) {
+    //   super(letter);
+    // }
 
     getMove(game) {
       let validSquare = false;
@@ -70,68 +70,68 @@ const RandBoard = () => {
     }
   }
 
-  class GenCp extends Player {
-    constructor(letter) {
-      super(letter);
-    }
+  // class GenCp extends Player {
+  //   constructor(letter) {
+  //     super(letter);
+  //   }
 
-    getMove(game) {
-      if (game.availableMoves().length === 9) {
-        const square =
-          game.availableMoves()[
-            Math.floor(Math.random() * game.availableMoves().length)
-          ];
-        return square;
-      } else {
-        return this.minimax(game, this.letter).position;
-      }
-    }
+  //   getMove(game) {
+  //     if (game.availableMoves().length === 9) {
+  //       const square =
+  //         game.availableMoves()[
+  //           Math.floor(Math.random() * game.availableMoves().length)
+  //         ];
+  //       return square;
+  //     } else {
+  //       return this.minimax(game, this.letter).position;
+  //     }
+  //   }
 
-    minimax(state, player) {
-      const maxPlayer = this.letter;
-      const otherPlayer = player === "X" ? "O" : "X";
+  //   minimax(state, player) {
+  //     const maxPlayer = this.letter;
+  //     const otherPlayer = player === "X" ? "O" : "X";
 
-      if (state.currentWinner === otherPlayer) {
-        return {
-          position: null,
-          score:
-            otherPlayer === maxPlayer
-              ? 1 * (state.numEmptySquares() + 1)
-              : -1 * (state.numEmptySquares() + 1),
-        };
-      } else if (!state.emptySquares()) {
-        return { position: null, score: 0 };
-      }
+  //     if (state.currentWinner === otherPlayer) {
+  //       return {
+  //         position: null,
+  //         score:
+  //           otherPlayer === maxPlayer
+  //             ? 1 * (state.numEmptySquares() + 1)
+  //             : -1 * (state.numEmptySquares() + 1),
+  //       };
+  //     } else if (!state.emptySquares()) {
+  //       return { position: null, score: 0 };
+  //     }
 
-      let best;
-      if (player === maxPlayer) {
-        best = { position: null, score: -Infinity };
-      } else {
-        best = { position: null, score: Infinity };
-      }
+  //     let best;
+  //     if (player === maxPlayer) {
+  //       best = { position: null, score: -Infinity };
+  //     } else {
+  //       best = { position: null, score: Infinity };
+  //     }
 
-      for (const possibleMove of state.availableMoves()) {
-        state.makeMove(possibleMove, player);
-        const simScore = this.minimax(state, otherPlayer);
+  //     for (const possibleMove of state.availableMoves()) {
+  //       state.makeMove(possibleMove, player);
+  //       const simScore = this.minimax(state, otherPlayer);
 
-        state.board[possibleMove] = " ";
-        state.currentWinner = null;
-        simScore.position = possibleMove;
+  //       state.board[possibleMove] = " ";
+  //       state.currentWinner = null;
+  //       simScore.position = possibleMove;
 
-        if (player === maxPlayer) {
-          if (simScore.score > best.score) {
-            best = simScore;
-          }
-        } else {
-          if (simScore.score < best.score) {
-            best = simScore;
-          }
-        }
-      }
+  //       if (player === maxPlayer) {
+  //         if (simScore.score > best.score) {
+  //           best = simScore;
+  //         }
+  //       } else {
+  //         if (simScore.score < best.score) {
+  //           best = simScore;
+  //         }
+  //       }
+  //     }
 
-      return best;
-    }
-  }
+  //     return best;
+  //   }
+  // }
 
   class TicTacToe {
     constructor() {
@@ -298,7 +298,7 @@ const RandBoard = () => {
   //   console.log("X goes first.");
   // play(game, Xp, Op, true);
   return (
-    <div>
+    <div className="boox">
       <Board turn={turn} heading={game.heading} board={game.board} />
       <br />
       <Reset difficulty="easy" />

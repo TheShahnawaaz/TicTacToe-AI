@@ -26,24 +26,24 @@ const AIBoard = () => {
     }
   }
 
-  class RandomCP extends Player {
-    constructor(letter) {
-      super(letter);
-    }
+  // class RandomCP extends Player {
+  //   constructor(letter) {
+  //     super(letter);
+  //   }
 
-    getMove(game) {
-      const square =
-        game.availableMoves()[
-          Math.floor(Math.random() * game.availableMoves().length)
-        ];
-      return square;
-    }
-  }
+  //   getMove(game) {
+  //     const square =
+  //       game.availableMoves()[
+  //         Math.floor(Math.random() * game.availableMoves().length)
+  //       ];
+  //     return square;
+  //   }
+  // }
 
   class HumanP extends Player {
-    constructor(letter) {
-      super(letter);
-    }
+    // constructor(letter) {
+    //   super(letter);
+    // }
 
     getMove(game) {
       let validSquare = false;
@@ -73,9 +73,9 @@ const AIBoard = () => {
   }
 
   class GenCp extends Player {
-    constructor(letter) {
-      super(letter);
-    }
+    // constructor(letter) {
+    //   super(letter);
+    // }
 
     getMove(game) {
       if (game.availableMoves().length === 9) {
@@ -151,14 +151,14 @@ const AIBoard = () => {
       }
     }
 
-    static printBoardNums() {
-      const numBoard = [...new Array(3)].map((_, i) =>
-        [...new Array(3)].map((_, j) => i * 3 + j)
-      );
-      for (const row of numBoard) {
-        //console.log(`| ${row.join(" | ")} |`);
-      }
-    }
+    // static printBoardNums() {
+    //   const numBoard = [...new Array(3)].map((_, i) =>
+    //     [...new Array(3)].map((_, j) => i * 3 + j)
+    //   );
+    //   for (const row of numBoard) {
+    //     console.log(`| ${row.join(" | ")} |`);
+    //   }
+    // }
 
     availableMoves() {
       return this.board
@@ -298,7 +298,7 @@ const AIBoard = () => {
   //console.log("X goes first.");
   // play(game, Xp, Op, true);
   return (
-    <div>
+    <div className="boox">
       <Board turn={turn} heading={game.heading} board={game.board} />
       <br />
       <Reset difficulty="hard" />

@@ -1,21 +1,15 @@
 // import * as React from "react";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
-import { Container } from "@mui/system";
 import { styled } from "@mui/material/styles";
-import { purple, green } from "@mui/material/colors";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
-// import DeleteIcon from "@mui/icons-material/Delete";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import ButtonGroup from "@mui/material/ButtonGroup";
+
 import Button from "@mui/material/Button";
 
 const ColorButton = styled(Button)(({ theme }) => ({
   height: "100%",
   width: "100%",
-  color: theme.palette.getContrastText(purple[500]),
 
   backgroundColor: "#333232",
   "&:hover": {
