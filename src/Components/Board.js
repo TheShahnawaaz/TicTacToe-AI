@@ -89,12 +89,12 @@ export default function Board(props) {
           severity={headi[1]}
           variant="filled"
           sx={{
-            width: { xs: "80vw", md: "60vw" },
-            height: { xs: "50px", md: "100px" },
+            width: { xs: "90vw", sm: "80vw", md: "60vw" },
+            height: { xs: "40px", md: "100px" },
             alignSelf: "center",
             justifyContent: "center",
             alignItems: "center",
-            fontSize: { xs: "15px", md: "30px" },
+            fontSize: { xs: "13px", md: "30px" },
           }}
         >
           <div className="tit">{headi[0]}</div>
@@ -106,7 +106,7 @@ export default function Board(props) {
           // className="btn"
           item
           xs={8}
-          sx={{ height: { xs: "60vw", md: "34vw" } }}
+          sx={{ height: { xs: "65vw", md: "34vw" } }}
           md={4}
           container
           spacing={2}
