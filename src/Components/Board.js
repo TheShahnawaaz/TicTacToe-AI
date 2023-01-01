@@ -12,9 +12,9 @@ const ColorButton = styled(Button)(({ theme }) => ({
   width: "100%",
 
   backgroundColor: "#333232",
-  "&:hover": {
-    backgroundColor: "#333232",
-  },
+  // "&:hover": {
+  //   backgroundColor: "#333232",
+  // },
 }));
 
 export default function Board(props) {
