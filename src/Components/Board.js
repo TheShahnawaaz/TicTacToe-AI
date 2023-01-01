@@ -44,6 +44,8 @@ export default function Board(props) {
 
   const doStuff = () => {
     setTable([...props.board]);
+    //find element by id and change its value
+    document.getElementsByClassName("tit")[0].click();
     refrershDsb();
     setHeading([...props.heading]);
     document.body.style.cursor = "none";

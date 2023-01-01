@@ -20,6 +20,7 @@ import MuiToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { styled } from "@mui/material/styles";
 
+const pathname = window.location.pathname;
 const ToggleButtonE = styled(MuiToggleButton)({
   "&.MuiToggleButton-root": {
     "border-color": "#ffffff",
@@ -76,7 +77,9 @@ function DrawerAppBar(props) {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const [alignment, setAlignment] = React.useState("hard");
+  const [alignment, setAlignment] = React.useState(
+    pathname === "/" ? "hard" : "easy"
+  );
 
   const handleChange = (event, newAlignment) => {
     if (newAlignment) setAlignment(newAlignment);
