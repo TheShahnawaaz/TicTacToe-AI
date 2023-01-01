@@ -228,7 +228,7 @@ const RandBoard = () => {
 
   function play(game, Xp, Op, printGame = true, letter, square) {
     if (printGame) {
-    //   TicTacToe.printBoardNums();
+      //   TicTacToe.printBoardNums();
     }
 
     //   let letter = "O";
@@ -255,7 +255,11 @@ const RandBoard = () => {
       if (game.currentWinner) {
         if (printGame) {
           //   setTimeout(() => {
-          game.heading[0] = `${letter === "X" ? "You Wins!!" : "AI Wins!!"}`;
+          game.heading[0] = `${
+            letter === "X"
+              ? "You Wins!! Tap below to reset"
+              : "AI Wins!! Tap below to reset"
+          }`;
           game.heading[1] = `${letter === "X" ? "success" : "error"}`;
 
           // alert(`${letter} wins!`);
@@ -272,11 +276,10 @@ const RandBoard = () => {
       // }
     }
 
-
     if (printGame && game.emptySquares() === false && !game.currentWinner) {
       //   console.log("It's a tie.");
 
-      game.heading[0] = "It's a tie.";
+      game.heading[0] = "It's a Tie. Tap below to reset.";
       game.heading[1] = "warning";
     }
   }

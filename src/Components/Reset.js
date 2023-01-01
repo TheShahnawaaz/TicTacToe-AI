@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import RotateLeftRoundedIcon from "@mui/icons-material/RotateLeftRounded";
+import { Box, Grid } from "@mui/material";
 
 export default function Reset(props) {
   const navigate = useNavigate();
@@ -10,9 +11,16 @@ export default function Reset(props) {
   );
   const hard = useCallback(() => navigate("/", { replace: true }), [navigate]);
   return (
-    <div>
+    <Grid
+      sx={{
+        fontSize: 70,
+        textAlign: "center",
+        width: "100%",
+        justifyContent: "center",
+      }}
+    >
       <RotateLeftRoundedIcon
-        sx={{ fontSize: 70, alignSelf: "center", width: "100%" }}
+        sx={{ fontSize: 70 }}
         onClick={() => {
           if (props.difficulty === "easy") {
             hard();
@@ -27,6 +35,6 @@ export default function Reset(props) {
           }
         }}
       />
-    </div>
+    </Grid>
   );
 }

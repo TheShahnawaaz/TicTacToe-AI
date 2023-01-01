@@ -257,7 +257,11 @@ const AIBoard = () => {
       if (game.currentWinner) {
         if (printGame) {
           //   setTimeout(() => {
-          game.heading[0] = `${letter === "X" ? "You Wins!!" : "AI Wins!!"}`;
+          game.heading[0] = `${
+            letter === "X"
+              ? "You Wins!! Tap below to reset"
+              : "AI Wins!! Tap below to reset"
+          }`;
           game.heading[1] = `${letter === "X" ? "success" : "error"}`;
 
           // alert(`${letter} wins!`);
@@ -275,7 +279,7 @@ const AIBoard = () => {
 
     if (printGame && game.emptySquares() === false) {
       //console.log("It's a tie.");
-      game.heading[0] = "It's a tie.";
+      game.heading[0] = "It's a Tie. Tap below to reset.";
       game.heading[1] = "warning";
     }
   }

@@ -18,10 +18,40 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import ToggleButton from "@mui/material/ToggleButton";
+import MuiToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { styled, alpha } from "@mui/material/styles";
 import { pink } from "@mui/material/colors";
+import { styled } from "@mui/material/styles";
+
+const ToggleButtonE = styled(MuiToggleButton)({
+  "&.MuiToggleButton-root": {
+    "border-color": "#ffffff",
+    color: "#ffffff91",
+    // backgroundColor: "#388e3c",
+  },
+  "&.Mui-selected": {
+    color: "#ffffff",
+    backgroundColor: "#388e3c",
+  },
+  "&.Mui-selected:hover": {
+    backgroundColor: "#388e3cd1",
+  },
+});
+const ToggleButtonH = styled(MuiToggleButton)({
+  "&.MuiToggleButton-root": {
+    "border-color": "#ffffff",
+    color: "#ffffff91",
+    // backgroundColor: "#388e3c",
+  },
+  "&.Mui-selected": {
+    color: "white",
+    backgroundColor: "#d32f2f",
+  },
+  "&.Mui-selected:hover": {
+    // color: "blue",
+    backgroundColor: "#d32f2fd4",
+  },
+});
 
 const theme = createTheme({
   palette: {
@@ -30,7 +60,7 @@ const theme = createTheme({
       main: "#333232",
     },
     secondary: {
-      main: "#f44336",
+      main: "#333232",
     },
   },
 });
@@ -64,14 +94,16 @@ function DrawerAppBar(props) {
     <ThemeProvider theme={theme}>
       <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
         <Typography variant="h6" sx={{ my: 2 }}>
-          Intelligent Tic Tac Toe
+          <div className="company">Intelligent Tic Tac Toe</div>
         </Typography>
         <Divider />
         <List>
           {navItems.map((item) => (
             <ListItem key={item} disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item} />
+                <div className="ubun">
+                  <ListItemText primary={item} />
+                </div>
               </ListItemButton>
             </ListItem>
           ))}
@@ -107,7 +139,7 @@ function DrawerAppBar(props) {
                 fontSize: { xs: "15px", md: "30px" },
               }}
             >
-              Intelligent TicTacToe
+              <div className="company">Intelligent Tic Tac Toe</div>
             </Typography>
             <ToggleButtonGroup
               color="error"
@@ -117,17 +149,17 @@ function DrawerAppBar(props) {
               onChange={handleChange}
               aria-label="Platform"
             >
-              <ToggleButton value="hard" colour="error" onClick={hard}>
-                Hard
-              </ToggleButton>
-              <ToggleButton value="easy" onClick={easy}>
-                Easy
-              </ToggleButton>
+              <ToggleButtonH value="hard" onClick={hard}>
+                <div className="ubun">Hard</div>
+              </ToggleButtonH>
+              <ToggleButtonE value="easy" onClick={easy}>
+                <div className="ubun">Easy</div>
+              </ToggleButtonE>
             </ToggleButtonGroup>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
                 <Button key={item} sx={{ color: "#fff" }}>
-                  {item}
+                  <div className="ubun">{item}</div>
                 </Button>
               ))}
             </Box>

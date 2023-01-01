@@ -19,7 +19,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
 
   backgroundColor: "#333232",
   "&:hover": {
-    backgroundColor: "#3b3b3bcc",
+    backgroundColor: "#333232",
   },
 }));
 
@@ -103,7 +103,7 @@ export default function Board(props) {
             fontSize: { xs: "15px", md: "30px" },
           }}
         >
-          {headi[0]}
+          <div className="tit">{headi[0]}</div>
         </Alert>
       </Stack>
       {/* <h1 id="heading">{headi[0]}</h1> */}
